@@ -6,7 +6,7 @@ Description: "A httpd cartridge for development use only."
 Version: '0.1'
 License: "None"
 Vendor: Custom Cartridges INC
-Cartridge-Vendor: Sebastian Scatularo
+Cartridge-Vendor: sebastian-scatularo
 Cartridge-Version: 0.0.1
 Categories:
   - service
