@@ -63,7 +63,7 @@ ServerTokens OS
 # changed.
 #
 PidFile <%= ENV['OPENSHIFT_HTTPD_DIR'] %>httpd.pid
-<%= ENV['OPENSHIFT_HTTPD_DIR'] %>
+
 #
 # Timeout: The number of seconds before receives and sends time out.
 #
@@ -1007,4 +1007,4 @@ BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
 #    ErrorLog logs/dummy-host.example.com-error_log
 #    CustomLog logs/dummy-host.example.com-access_log common
 #</VirtualHost>
-IncludeOptional <%= ENV['OPENSHIFT_HTTPD_DIR'] %>etc/vhost.conf
+Include <%= ENV['OPENSHIFT_HTTPD_DIR'] %>etc/vhost.conf
