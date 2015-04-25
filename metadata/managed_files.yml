@@ -3,4 +3,7 @@ locked_files:
 - env/
 - env/*
 processed_templates:
-- '**/*.er'
+- 'etc/httpd.conf.erb'
+- 'etc/vhost.conf.erb'
+--- 'conf/neo4j-wrapper.conf.erb'
+--- '**/*.er'

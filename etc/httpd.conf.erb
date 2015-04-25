@@ -1007,4 +1007,4 @@ BrowserMatch "^Dreamweaver-WebDAV-SCM1" redirect-carefully
 #    ErrorLog logs/dummy-host.example.com-error_log
 #    CustomLog logs/dummy-host.example.com-access_log common
 #</VirtualHost>
-IncludeOptional vhost.conf
+IncludeOptional <%= ENV['OPENSHIFT_HTTPD_DIR'] %>etc/vhost.conf
