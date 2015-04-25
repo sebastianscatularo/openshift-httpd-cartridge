@@ -5,5 +5,5 @@ locked_files:
 processed_templates:
 - 'etc/httpd.conf.erb'
 - 'etc/vhost.conf.erb'
---- 'conf/neo4j-wrapper.conf.erb'
---- '**/*.er'
+#--- 'conf/neo4j-wrapper.conf.erb'
+#--- '**/*.er'
