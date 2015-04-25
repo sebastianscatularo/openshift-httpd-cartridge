@@ -54,7 +54,7 @@ ServerTokens OS
 #
 # Do NOT add a slash at the end of the directory path.
 #
-ServerRoot "<%= ENV['OPENSHIFT_HTTPD_DIR'] %>"
+#ServerRoot "<%= ENV['OPENSHIFT_HTTPD_DIR'] %>"
 
 #
 # PidFile: The file in which the server should record its process
@@ -62,8 +62,8 @@ ServerRoot "<%= ENV['OPENSHIFT_HTTPD_DIR'] %>"
 # /etc/sysconfig/httpd must be set appropriately if this location is
 # changed.
 #
-PidFile run/httpd.pid
-
+PidFile <%= ENV['OPENSHIFT_HTTPD_DIR'] %>httpd.pid
+<%= ENV['OPENSHIFT_HTTPD_DIR'] %>
 #
 # Timeout: The number of seconds before receives and sends time out.
 #
@@ -289,8 +289,8 @@ UseCanonicalName Off
 # documents. By default, all requests are taken from this directory, but
 # symbolic links and aliases may be used to point to other locations.
 #
-DocumentRoot /etc/httpd/"<%= ENV['OPENSHIFT_REPO_DIR'] %>"
-
+#DocumentRoot /etc/httpd/"<%= ENV['OPENSHIFT_REPO_DIR'] %>"
+DocumentRoot <%= ENV['OPENSHIFT_REPO_DIR'] %>
 #
 # Each directory to which Apache has access can be configured with respect
 # to which services and features are allowed and/or disabled in that
@@ -314,8 +314,8 @@ DocumentRoot /etc/httpd/"<%= ENV['OPENSHIFT_REPO_DIR'] %>"
 #
 # This should be changed to whatever you set DocumentRoot to.
 #
-<Directory "/var/www/html">
-
+#<Directory "/var/www/html">
+<Directory "<%= ENV['OPENSHIFT_REPO_DIR'] %>">
 #
 # Possible values for the Options directive are "None", "All",
 # or any combination of:
@@ -481,7 +481,7 @@ HostnameLookups Off
 # logged here.  If you *do* define an error logfile for a <VirtualHost>
 # container, that host's errors will be logged there and not here.
 #
-ErrorLog logs/error_log
+ErrorLog <%= ENV['OPENSHIFT_HTTPD_DIR']%>log/error_log
 
 #
 # LogLevel: Control the number of messages logged to the error_log.
@@ -523,7 +523,7 @@ LogFormat "%{User-agent}i" agent
 # For a single logfile with access, agent, and referer information
 # (Combined Logfile Format), use the following directive:
 #
-CustomLog logs/access_log combined
+CustomLog <%= ENV['OPENSHIFT_HTTPD_DIR']%>log/access_log combined
 
 #
 # Optionally add a line containing the server version and virtual host
